@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Ajouter un Incident</h2>
+  <form (ngSubmit)="addIncident()">
+    <div class="form-group">
+      <label for="title">Titre de l'incident</label>
+      <input type="text" id="title" class="form-control" [(ngModel)]="incident.title" name="title" required />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description de l'incident</label>
+      <textarea id="description" class="form-control" [(ngModel)]="incident.description" name="description" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="incidentTypeID">Type d'incident</label>
+      <select id="incidentTypeID" class="form-control" [(ngModel)]="incident.incidentTypeID" name="incidentTypeID" required>
+        <option *ngFor="let type of incidentTypes" [value]="type.typeID">{{ type.typeName }}</option>
+       
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="priorityID">Priorité</label>
+      <select id="priorityID" class="form-control" [(ngModel)]="incident.priorityID" name="priorityID" required>
+        <option *ngIf="priorities.length === 0" disabled>Chargement...</option>
+        <option *ngFor="let priority of priorities" [value]="priority.priorityID">{{ priority.priorityName }}</option>
+
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ajouter l'Incident</button>
+  </form>
+</div>

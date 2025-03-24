@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  margin-left: 260px; /* Ajuster l'espace de la sidebar */
+  padding: 20px;
+  margin-top: 60px; /* Pour éviter que le contenu passe sous la navbar */
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: -20px;
+  z-index: 1000;
+}
+.sidebar{
+    top:20px;
+}

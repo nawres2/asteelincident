@@ -1,0 +1,50 @@
+
+  <!-- Contenu principal -->
+<div class="container">
+
+  <!-- Statistiques -->
+  <div class="stats">
+    <div class="card">
+       Incidents Ouverts:
+      <br />
+      <div class="cardintred" style="display: block;"><br />{{ stats.ouvert }}</div>
+    </div>
+
+    <div class="card">
+       Incidents En Attente:  <br />
+      <div class="cardintjaune" style="display: block;"><br />{{ stats.enattente }}</div></div>
+
+      <div class="card">
+         Incidents Résolus: <br />
+        <div class="cardintvert" style="display: block;"><br /> {{ stats.resolu }}</div></div>
+      </div>
+  <div>
+    <!-- Liste des incidents -->
+    <div class="incidents-panel">
+      <h3>Incidents Récents</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Titre</th>
+            <th>Type</th>
+            <th>status</th>
+            <th>priority</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let incident of incidents">
+            <td>{{ incident.incidentID }}</td>
+            <td>{{ incident.title }}</td>
+            <td>{{ getIncidentTypeName(incident.incidentTypeID) }}</td>
+            <td>{{ getStatusName(incident.status) }}</td>
+            <td>{{ getPriorityName(incident.priorityID) }}</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <button class="add-btn" routerLink="/liste-incident">Vour tous les incidents</button>
+  </div>

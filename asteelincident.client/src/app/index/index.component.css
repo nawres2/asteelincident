@@ -1,0 +1,266 @@
+/* Conteneur principal 
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre principal 
+h2 {
+  text-align: center;
+  color: #1ab188;
+  font-size: 28px;
+}
+
+/* Cartes de statistiques 
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: white;
+  padding: 50px 25px;
+  height: 50px;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  font-weight: bold;
+  align-items: center;
+  gap: 10px;
+}
+.cardintred {
+  font-size: 25px; /* Taille de la police pour le nombre 
+  font-weight: bold;
+  color:red;
+}
+.cardintjaune {
+  font-size: 25px; /* Taille de la police pour le nombre 
+  font-weight: bold;
+  color: orange;
+}
+.cardintvert {
+  font-size: 25px; /* Taille de la police pour le nombre 
+  font-weight: bold;
+  color: green;
+}
+/* Table 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background: #1ab188;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-size: 16px;
+}
+
+tbody tr:hover {
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Bouton Ajouter 
+.add-btn {
+margin-left:700px;
+padding: 12px 17px;
+  background: #1ab188;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+  .add-btn:hover {
+    background: #128f76;
+  }
+    */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #DCDCDC;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+
+}
+
+h1, h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+/* Section des statistiques */
+.stats {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 4px;
+  padding: 15px;
+  flex: 1;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.cardintred {
+  font-size: 28px;
+  font-weight: bold;
+  color: #e74c3c;
+  margin-top: 5px;
+}
+
+.cardintjaune {
+  font-size: 28px;
+  font-weight: bold;
+  color: #f39c12;
+  margin-top: 5px;
+}
+
+.cardintvert {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2ecc71;
+  margin-top: 5px;
+}
+/* Tableau des incidents */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  margin-top: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+th {
+  background-color: #f2f2f2;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+  /* Styles des priorités */
+  td:nth-child(4) {
+    font-weight: bold;
+  }
+
+tr td:nth-child(4):contains("Urgente") {
+  color: #e74c3c;
+}
+
+tr td:nth-child(4):contains("Moyenne") {
+  color: #f39c12;
+}
+
+tr td:nth-child(4):contains("Basse") {
+  color: #2ecc71;
+}
+/* Pour Angular, utilisez des classes conditionnelles */
+.priorite-urgente {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.priorite-moyenne {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.priorite-basse {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.statut-encours {
+  font-weight: bold;
+}
+/* Bouton */
+.add-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+  .add-btn:hover {
+    background-color: #2980b9;
+  }
+/* Graphique de performance (ajoutez ce bloc à votre HTML) */
+.performance {
+  background-color: white;
+  border-radius: 4px;
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.graph {
+  display: flex;
+  align-items: flex-end;
+  height: 100px;
+  margin-top: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.bar {
+  flex: 1;
+  margin: 0 5px;
+  text-align: center;
+}
+
+.bar-inner {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.red-bar {
+  background-color: #e74c3c;
+}
+
+.orange-bar {
+  background-color: #f39c12;
+}
+
+.green-bar {
+  background-color: #2ecc71;
+}
+
+.day {
+  margin-top: 5px;
+  font-size: 12px;
+}

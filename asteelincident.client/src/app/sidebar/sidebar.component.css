@@ -1,0 +1,35 @@
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: #3B546C;
+  color: white;
+  position: fixed;
+  top: 30px;
+  left: 0;
+  padding-top: 20px;
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sidebar-menu li {
+  padding: 10px;
+}
+
+.sidebar-menu li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+
+  .sidebar-menu li a:hover {
+    background-color: #34495e;
+  }

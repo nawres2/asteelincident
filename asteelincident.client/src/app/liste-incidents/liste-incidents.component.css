@@ -1,0 +1,174 @@
+.yeux {
+  width: 20px; /* Réduire la largeur */
+  height: 20px; /* Réduire la hauteur */
+}
+/* Styles généraux */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Bouton Ajouter */
+.add-btn {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Barre de recherche et filtres */
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+  .search-container input[type="text"] {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .search-container select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-width: 120px;
+  }
+
+/* Tableau des incidents */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+thead {
+  background-color: #2c3e50;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+  /* Status et priorité badges - styles généraux */
+  td span, td div {
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    min-width: 80px;
+  }
+
+  /* Styles spécifiques pour les statuts */
+  /* Ces sélecteurs sont plus précis pour s'assurer qu'ils s'appliquent */
+  span:contains("Critique"), td:contains("Critique") {
+    background-color: #e74c3c !important;
+  }
+
+  span:contains("Open"), td:contains("Open") {
+    background-color: #f39c12 !important;
+  }
+
+  span:contains("Assigné"), td:contains("Assigné") {
+    background-color: #3498db !important;
+  }
+
+  span:contains("Résolu"), td:contains("Résolu") {
+    background-color: #2ecc71 !important;
+  }
+
+  /* Styles spécifiques pour les priorités */
+  span:contains("Haute"), td:contains("Haute") {
+    background-color: #e74c3c !important;
+  }
+
+  span:contains("Moyenne"), td:contains("Moyenne") {
+    background-color: #f39c12 !important;
+  }
+
+  span:contains("Basse"), td:contains("Basse") {
+    background-color: #2ecc71 !important;
+  }
+
+/* Alternative avec des classes directes si vous préférez les ajouter à vos éléments */
+.critique {
+  background-color: #e74c3c;
+}
+
+.ouvert {
+  background-color: #f39c12;
+}
+
+.enattente {
+  background-color: #3498db;
+}
+
+.resolu {
+  background-color: #2ecc71;
+}
+
+.Haute {
+  background-color: #e74c3c;
+}
+
+.moyenne {
+  background-color: #f39c12;
+}
+
+.basse {
+  background-color: #2ecc71;
+}
+
+/* Bouton d'action */
+td:last-child button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+/* Image dans le bouton */
+.yeux {
+  width: 18px;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Pagination */
+.pagination {
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+
+  .pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #333;
+  }
+
+    .pagination a:first-child {
+      background-color: #3498db;
+      color: white;
+    }

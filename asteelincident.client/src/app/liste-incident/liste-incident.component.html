@@ -1,0 +1,22 @@
+<h3>Liste des Incidents</h3>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Titre</th>
+      <th>Type</th>
+      <th>Status</th>
+      <th>Priorité</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let incident of incidents">
+      <td>{{ incident.incidentID }}</td>
+      <td>{{ incident.title }}</td>
+      <td>{{ incident.incidentType }}</td>
+      <td>{{ incident.status }}</td>
+      <td>{{ incident.priority }}</td>
+    </tr>
+  </tbody>
+</table>

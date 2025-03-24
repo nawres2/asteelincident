@@ -1,0 +1,66 @@
+﻿<div class="container mt-4">
+    <h2>Tableau de Bord des Incidents</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card bg-danger text-white mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Incidents Ouverts</h5>
+                    <p class="card-text">@Model.OpenIncidents</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-warning text-white mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Incidents en Cours</h5>
+                    <p class="card-text">@Model.InProgressIncidents</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-success text-white mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Incidents Résolus</h5>
+                    <p class="card-text">@Model.ResolvedIncidents</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-info text-white mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Total Incidents</h5>
+                    <p class="card-text">@Model.TotalIncidents</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4>Incidents Récents</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Statut</th>
+                <th>Priorité</th>
+                <th>Date de Création</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var incident in Model.RecentIncidents)
+            {
+                <tr>
+                    <td>@incident.Title</td>
+                    <td>@incident.Status</td>
+                    <td>@incident.Priority</td>
+                    <td>@incident.CreatedDate.ToShortDateString()</td>
+                    <td>
+                        <a href="@Url.Action("Details", "Incidents", new { id = incident.IncidentID })" class="btn btn-info btn-sm">Voir</a>
+                        <a href="@Url.Action("Edit", "Incidents", new { id = incident.IncidentID })" class="btn btn-warning btn-sm">Modifier</a>
+                        <a href="@Url.Action("Delete", "Incidents", new { id = incident.IncidentID })" class="btn btn-danger btn-sm">Supprimer</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

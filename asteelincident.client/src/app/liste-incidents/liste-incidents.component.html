@@ -1,0 +1,123 @@
+<!--<h3>Liste des Incidents</h3>
+<button class="add-btn" routerLink="/ajouter-incident">Ajouter incident</button>
+<br />
+
+<!-- Barre de recherche avec filtres
+<div class="search-container">
+  <input type="text" placeholder="Rechercher un incident..." [(ngModel)]="searchText" (input)="filterIncidents()" />
+
+  <select [(ngModel)]="selectedType" (change)="filterIncidents()">
+    <option value="">Tous les types</option>
+    <option *ngFor="let type of incidentTypes" [value]="type">{{ type }}</option>
+  </select>
+
+  <select [(ngModel)]="selectedPriority" (change)="filterIncidents()">
+    <option value="">Toutes priorités</option>
+    <option *ngFor="let priority of priorities" [value]="priority">{{ priority }}</option>
+  </select>
+
+  <select [(ngModel)]="selectedStatus" (change)="filterIncidents()">
+    <option value="">Tous les statuts</option>
+    <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+  </select>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Titre</th>
+      <th>Type</th>
+      <th>Status</th>
+      <th>Priorité</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let incident of filteredIncidents">
+      <!-- ✅ Correction ici
+      <td>{{ incident.incidentID }}</td>
+      <td>{{ incident.title }}</td>
+      <td>{{ incident.incidentType }}</td>
+      <td>{{ incident.status }}</td>
+      <td>{{ incident.priority }}</td>
+      <td> <button class="add-btn" [routerLink]="['/details-incidents', incident.incidentID]"><img class="yeux" src="assets/Image/yeux icon.png" /></button></td>
+    </tr>
+  </tbody>
+</table>-->
+
+
+<h3>Liste des Incidents</h3>
+<button class="add-btn" routerLink="/ajouter-incident">Ajouter incident</button>
+<br />
+<!-- Barre de recherche avec filtres -->
+<div class="search-container">
+  <input type="text" placeholder="Rechercher un incident..." [(ngModel)]="searchText" (input)="filterIncidents()" />
+  <select [(ngModel)]="selectedType" (change)="filterIncidents()">
+    <option value="">Tous les types</option>
+    <option *ngFor="let type of incidentTypes" [value]="type">{{ type }}</option>
+  </select>
+  <select [(ngModel)]="selectedPriority" (change)="filterIncidents()">
+    <option value="">Toutes priorités</option>
+    <option *ngFor="let priority of priorities" [value]="priority">{{ priority }}</option>
+  </select>
+  <select [(ngModel)]="selectedStatus" (change)="filterIncidents()">
+    <option value="">Tous les statuts</option>
+    <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+  </select>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Titre</th>
+      <th>Type</th>
+      <th>Status</th>
+      <th>Priorité</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let incident of filteredIncidents">
+      <td>{{ incident.incidentID }}</td>
+      <td>{{ incident.title }}</td>
+      <td>{{ incident.incidentType }}</td>
+      <td>
+        <!-- Ajouter les classes pour les statuts -->
+        <span class="status-badge"
+              [ngClass]="{
+                'critique': incident.status === 'Critique',
+                'ouvert': incident.status === 'Ouvert',
+                'enattente': incident.status === 'En attente',
+                'resolu': incident.status === 'Résolu'
+              }">
+          {{ incident.status }}
+        </span>
+      </td>
+      <td>
+        <!-- Ajouter les classes pour les priorités -->
+        <span class="priority-badge"
+              [ngClass]="{
+                'Haute': incident.priority === 'Haute',
+                'moyenne': incident.priority === 'Moyenne',
+                'basse': incident.priority === 'Basse'
+              }">
+          {{ incident.priority }}
+        </span>
+      </td>
+      <td>
+        <button class="action-btn" [routerLink]="['/details-incidents', incident.incidentID]">
+          <img class="yeux" src="assets/Image/yeux icon.png" />
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Pagination -->
+<div class="pagination">
+  <a href="#" class="active">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">...</a>
+</div>

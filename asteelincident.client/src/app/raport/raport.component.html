@@ -1,0 +1,46 @@
+<div class="dashboard">
+  <h2>Rapports et Statistiques</h2>
+  <!-- <div class="export-section">
+     <button class="export-btn" (click)="exportToCsv()">
+       <i class="fa fa-download"></i> Exporter en CSV
+     </button>
+
+
+   </div>--->
+
+
+  <div class="export-section">
+    <button class="export-btn" (click)="exportToCsv()">
+      <i class="fas fa-download"></i> Exporter en CSV
+    </button>
+  </div>
+  <div class="stats">
+    <div class="card">
+      <h3>Total d'incidents</h3>
+      <p>{{ totalIncidents }}</p>
+    </div>
+
+    <div class="card">
+      <h3>Incidents par type</h3>
+      <div style="height: 300px; position: relative;">
+        <canvas baseChart
+                [data]="pieChartData"
+                [type]="pieChartType"
+                [options]="pieChartOptions">
+        </canvas>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Évolution du statut des incidents</h3>
+      <div style="position: relative; height: 300px; width: 100%;">
+        <canvas baseChart
+                [type]="lineChartType"
+                [data]="lineChartData"
+                [options]="lineChartOptions">
+        </canvas>
+      </div>
+    </div>
+
+
+  </div>
+</div>

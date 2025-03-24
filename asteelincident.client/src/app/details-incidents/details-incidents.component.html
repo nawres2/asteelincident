@@ -1,0 +1,23 @@
+<h2 *ngIf="incident">Incident {{ incident.incidentID }}</h2>
+
+<span *ngIf="incident" class="status-badge"
+      [ngClass]="{
+         'critique': incident.status === 'Critique',
+         'Open': incident.status === 'Open',
+         'assigne': incident.status === 'Assigné',
+         'resolu': incident.status === 'Résolu'
+       }">
+  {{ incident.status }}
+</span>
+
+<span class="priority-badge"
+      [ngClass]="{
+           'Haute': incident.priority === 'Haute',
+           'moyenne': incident.priority === 'Moyenne',
+           'basse': incident.priority === 'Basse'
+         }">
+  {{ incident.priority }}
+</span>
+<p *ngIf="incident"> Type d'incident: {{ getIncidentTypeName(incident.incidentType) }} </p>
+<p>Créé par : {{ incident?.CreatedBy }}</p>
+<p>Cree a :{{incident.CreatedAt}}</p>
